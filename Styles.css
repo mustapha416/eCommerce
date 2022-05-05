@@ -1,0 +1,8 @@
+.section{
+
+    background-color: yellow;
+    width: 200px;
+    height: 400px;
+    
+    display: flex;
+}
