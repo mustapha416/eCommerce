@@ -1,8 +1,34 @@
 .section{
 
-    background-color: yellow;
-    width: 200px;
-    height: 400px;
+    //background-color: yellow;
+    //width: fit-content;
+    //height: fit-content;
     
+    //display: flex;
+    background-image: url("./logo.png");
+}
+
+#top{
+    background-image: url("./logo.png");
+    background-repeat: repeat;
+    width: fit-content;
+    height: fit-content;
+}
+
+#s1{
+
     display: flex;
+    flex-direction: row;
+
+}
+
+#s3{
+
+    display: flex;
+    
+}
+
+#navbarContainer{
+
+    background-color: rgb(240, 223, 223);
 }
