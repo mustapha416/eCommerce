@@ -11,7 +11,7 @@ class Produit {
 
   let e1 = new Produit("Pokemon", "url('./Produits/Enfant/1.webp')", " Pokémon - ensemble - débardeur et T-shirt - 2 pièces  Coloris : jaune  ", "Enfant", 14.99);
   let e2 = new Produit("Ensemble", "url('./Produits/Enfant/2.webp')", "Ensemble - T-shirts et short en molleton - 2 pièces Coloris : bleu foncé  ", "Enfant", 19.99);
-  let e3 = new Produit("Dinosaures", "url('./Produits/Enfant/3.webp')", "Dinosaures - ensemble - T-shirt, sweat et pantalon de jogging Coloris : bleu foncé ", "Enfant", 29.99);
+  let e3 = new Produit("Nasa", "url('./Produits/Enfant/3.webp')", "Lot de 2 - NASA - pyjashorts Coloris : bleu", "Enfant", 19.99);
   let e4 = new Produit("polo et T-shirt", "url('./Produits/Enfant/4.webp')", " Ensemble - polo et T-shirt - 2 pièces - à rayures Coloris : blanc / bleu", "Enfant", 12.99);
   let e5 = new Produit("Looney Tunes", "url('./Produits/Enfant/5.webp')", " Looney Tunes - ensemble - 3 T-shirts et 3 pantalons de jogging Coloris : bleu", "Enfant", 44.99);
   let e6 = new Produit("Minions", "url('./Produits/Enfant/6.webp')", " Minions - ensemble - T-shirt et short en jean - 2 pièces Coloris : jaune ", "Enfant", 17.99);
@@ -29,5 +29,9 @@ class Produit {
   let h4 = new Produit("Veste à capuche", "url('./Produits/Homme/4.webp')", " Veste à capuche - matière recyclée Mode plus durable ", "Homme", 34.99);
   let h5 = new Produit("Veste matelassée", "url('./Produits/Homme/5.webp')", " Veste matelassée à capuche, avec garniture de fausse fourrure - matière recyclée ", "Homme", 79.99);
   let h6 = new Produit("Jean", "url('./Produits/Homme/6.webp')", " Jean coupe droite - production économe en eau Mode plus durable", "Homme", 44.99);
+
+  let h = [h1, h2, h3, h4, h5, h6]
+  let f = [f1, f2, f3, f4, f5, f6]
+  let e = [e1, e2, e3, e4, e5, e6]
  
 

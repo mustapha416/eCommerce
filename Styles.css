@@ -2,14 +2,25 @@
 
     /* background-color: yellow;
     width: fit-content;
-    height: fit-content;
-    display: flex; */
+    height: fit-content;*/
+    display: flexbox;
+    flex-direction: column; 
+    background-color: #EAF4F7;
+}
+
+.sectiontop{
+
+    /* background-color: yellow;
+    width: fit-content;
+    height: fit-content;*/
+    display: flexbox;
+    flex-direction: column; 
     background-image: url("./logo.png");
 }
 
 #top{
     background-image: url("./logo.png");
-    background-repeat: repeat;
+    background-repeat: repeat-y;
     width: fit-content;
     height: fit-content;
 }
@@ -30,4 +41,21 @@
 #navbarContainer{
 
     background-color: rgb(240, 223, 223);
+}
+
+.gallerie{
+float: inline-start;
+padding: 5%;
+
+}
+
+.divLigne{
+
+    display: flex;
+    flex-direction: row;
+    /* font-family: 'Brush Script MT', cursive; */
+    font-family: 'Arima Madurai', cursive;
+    text-align: center;
+    font-size: larger; 
+
 }
