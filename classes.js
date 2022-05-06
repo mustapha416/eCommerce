@@ -33,5 +33,9 @@ class Produit {
   let h = [h1, h2, h3, h4, h5, h6]
   let f = [f1, f2, f3, f4, f5, f6]
   let e = [e1, e2, e3, e4, e5, e6]
- 
+  let cart = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0, 0, 0]
+  // if(localStorage.getItem('panier') == null){
+  // localStorage.setItem('panier',JSON.stringify(cart))
+  // }
+
 

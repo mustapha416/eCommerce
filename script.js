@@ -1,10 +1,13 @@
-
+let affichage = [false, false, false];
+let categG = ""
+let iG = 0
+l//ocalStorage.setItem('panier',JSON.stringify(cart))
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
     let test2 = h1.image.split('\'');
     console.log(h1.image.split('\'')[1])
-
+    
     // document.getElementById("im1").src = h1.image.split('\'')[1];
     // document.getElementById("im2").src = h2.image.split('\'')[1];
     // document.getElementById("im3").src = h3.image.split('\'')[1];
@@ -43,6 +46,7 @@ function afficher(categ) {
     document.getElementById(id).style.display ="flex"
 
     var array = ['h', 'f', 'e'];
+    //alert(affichage[array.indexOf(categ)])
    
     //array.forEach(p => alert(p));
 
@@ -74,7 +78,9 @@ function afficher(categ) {
     }
 
     //Affichage des photos, titres et prix
+    if(!affichage[array.indexOf(categ)]){
     for (var i = 1; i <= 6; i++){
+        
         //Affichage des photos
         document.getElementById(id_image+i).src = tableauProduits[i-1].image.split('\'')[1];
         
@@ -92,9 +98,33 @@ function afficher(categ) {
         const textnode2 = document.createTextNode(tableauProduits[i-1].prix + "€")
         node.appendChild(textnode2);
         document.getElementById("div"+i+categ).appendChild(node2); 
+
+        //Ajout du bouton Achat
+        iG = i
+        categG = categ
+        const node3 = document.createElement("button");
+        node3.classList.add("btn")
+        node3.classList.add("btn-primary")
+        node3.dataset.num = i
+        //console.log(node3.classList.item(2))
+        node3.append("Ajouter au panier")
+        //JSON.parse(localStorage.getItem('cart'));
+        node3.onclick =ajouterAuPanier
+        //localStorage.setItem('panier',JSON.stringify(cart))
+        console.log(node3.classList)
+        document.getElementById("div"+i+categ).appendChild(node3); 
+        //const textnode3 = document.createTextNode("€dssssssddd")
+        //node.appendChild(textnode3);
+        //document.getElementById("div"+i+categ).appendChild(node3); 
         
 
+        //Hover des descriptions
+        document.getElementById("p"+categ+i).innerHTML = tableauProduits[i-1].description
+        
+        affichage[array.indexOf(categ)] = true;
+
     }
+}
 
 
 }
@@ -107,3 +137,60 @@ function masquer(lettre){
 
 }
 
+function ajouterAuPanier(){
+    
+
+    let char = this.textContent
+    let num = this.dataset.num
+    
+    if(char=="Ajouter au panier"){
+        
+    this.classList.replace("btn-primary","btn-secondary")
+    this.textContent = "ajouté"
+    
+    plusUn(num);
+    }
+    else{
+
+        this.textContent = "Ajouter au panier"
+        this.classList.replace("btn-secondary","btn-primary")
+        moinsUn(num);
+    }
+}
+
+function plusUn(item){
+
+
+    console.log("avant",cart[index(item)]) 
+    cart[index(item)]++;
+    console.log("apres",cart[index(item)]) 
+
+
+
+}
+
+function moinsUn(item){
+
+
+    console.log("avant",cart[index(item)]) 
+    cart[index(item)]--;
+    console.log("apres",cart[index(item)]) 
+}
+
+function index (itm){
+
+    let index = 0
+    switch (categG){
+        case "h":
+            index = itm -1
+            break
+        case "f":
+            index = 5 + parseInt(itm)
+            break
+        default :
+            index = 11 + parseInt(itm)
+
+    }
+    return index
+
+}
