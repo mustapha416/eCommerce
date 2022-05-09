@@ -1,7 +1,7 @@
 let affichage = [false, false, false];
 let categG = ""
 let iG = 0
-l//ocalStorage.setItem('panier',JSON.stringify(cart))
+//localStorage.setItem('panier',JSON.stringify(cart))
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
@@ -19,6 +19,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
     document.getElementById("sh").style.display ="none"
     document.getElementById("sf").style.display ="none"
     document.getElementById("se").style.display ="none"
+
+    // traitement modal
+    // document.getElementById("modal-button").addEventListener('click', function() {
+    //     document.getElementById(pModalp).add
+    // })
+
+
 
 }
 )
@@ -192,5 +199,50 @@ function index (itm){
 
     }
     return index
+
+}
+
+function afficherModal(){
+
+    //var text ="test"
+    //document.getElementById(pModal).innerHTML = "text"
+    //var p = element.createElement("p")
+    //element.appendChild("test")
+
+    // const node = document.createElement("p");
+    // const textnode = document.createTextNode("tableauProduits[i-1].nom")
+    // node.appendChild(document.createElement('br')); //Saut de ligne
+    // node.appendChild(textnode);
+    // document.getElementById(pModalp).innerHTML = "text"
+
+    var list = inventaire()
+    document.querySelector("#pModalp").innerHTML = list
+    //el.appendChild("gdgd")
+
+    // var node = document.createElement("p");
+    // const textnode = document.createTextNode(tableauProduits[i-1].nom)
+    // node.appendChild(document.createElement('br')); //Saut de ligne
+    // node.appendChild(textnode);
+    // node.appendChild(document.createElement('br')); //Saut de ligne
+  
+
+}
+
+function inventaire(){
+var invent = " "
+
+for(var i=0; i<cart.length; i++){
+    
+    if(cart[i]>0) {
+        
+        invent = invent + cartToProds[i].nom +" x "+ cart[i] +"    =      "+invent + cartToProds[i].prix +"<br/>"
+
+    }
+
+}
+
+console.log(invent)
+return invent
+
 
 }
